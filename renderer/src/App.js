@@ -1,8 +1,8 @@
 import React from 'react';
-import { Form } from './Form/Form.component';
+import { Form } from './js/components/Form/Form.component';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { TopBar } from './topbar/topbar';
-import { Home } from './home/home.component';
+import { TopBar } from './js/components/topbar/topbar';
+import { Home } from './js/components/home/home.component';
 
 const getRoutes = () => {
     return [...menuItems].reverse().map((menuItem) => {
@@ -23,12 +23,17 @@ export const App = () => {
 };
 
 const menuItems = [
-    { label: 'Home', path: '/', icon: 'pi pi-fw pi-home', component: <Form /> },
+    { label: 'Home', path: '/', icon: 'pi pi-fw pi-home', component: <Home /> },
     {
         label: 'Tasks',
         path: '/tasks',
         icon: 'pi pi-fw pi-calendar',
+        component: <Form />,
+    },
+    {
+        label: 'History',
+        path: '/history',
+        icon: 'pi pi-fw pi-pencil',
         component: <Home />,
     },
-    // { label: 'History', path: '/history', icon: 'pi pi-fw pi-pencil' },
 ];
