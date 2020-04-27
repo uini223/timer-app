@@ -6,7 +6,7 @@
     "author": "SonOfStorm",
     "license": "MIT",
     "scripts": {
-        "start-dev": "concurrently \"cd ./renderer && BROWSER=none yarn start\" \"wait-on http://localhost:8080 && cd ./main && electron .\""
+        "start-dev": "concurrently \"cd ./renderer && BROWSER=none yarn start\" \"wait-on http://localhost:8080 && cd ./main && yarn a \""
     },
     "devDependencies": {
         "concurrently": "^5.2.0",

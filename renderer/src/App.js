@@ -13,6 +13,7 @@ const getRoutes = () => {
         );
     });
 };
+
 export const App = () => {
     return (
         <BrowserRouter>
@@ -36,4 +37,10 @@ const menuItems = [
         icon: 'pi pi-fw pi-pencil',
         component: <Home />,
     },
+    {
+        label: 'Dupa',
+        path: '/history',
+        icon: 'pi pi-fw pi-pencil',
+        component: <Home />,
+    }
 ];

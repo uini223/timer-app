@@ -1,15 +1,12 @@
-// import {electron} from 'electron'
-const babel = require('@babel/core');
-babel.transform('code', {});
+import electron from 'electron'
 
-require('reflect-metadata');
-import { Task } from './task/task.entity';
-const electron = require('electron');
+import 'reflect-metadata';
+
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
-const path = require('path');
-const isDev = require('electron-is-dev');
+import path from 'path';
+import isDev from 'electron-is-dev';
 
 let mainWindow;
 
@@ -27,18 +24,18 @@ function createWindow() {
     // }
     mainWindow.on('closed', () => (mainWindow = null));
     //connect to database
-    createConnection({
-        type: 'sqlite',
-        username: 'root',
-        password: 'admin',
-        database: 'test',
-        entities: [__dirname + '/*entity.js'],
-        synchronize: true,
-    })
-        .then((connection) => {
-            // here you can start to work with your entities
-        })
-        .catch((error) => console.log(error));
+    // createConnection({
+    //     type: 'sqlite',
+    //     username: 'root',
+    //     password: 'admin',
+    //     database: 'test',
+    //     entities: [__dirname + '/*entity.js'],
+    //     synchronize: true,
+    // })
+    //     .then((connection) => {
+    //         // here you can start to work with your entities
+    //     })
+    //     .catch((error) => console.log(error));
 }
 
 app.on('ready', createWindow);
