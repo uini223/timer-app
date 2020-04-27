@@ -17,11 +17,12 @@ function createWindow() {
             ? 'http://localhost:8080'
             : `file://${path.join(__dirname, '../dist/index.html')}`
     );
-    // if (isDev) {
-    //   // Open the DevTools.
-    //   //BrowserWindow.addDevToolsExtension('<location to your react chrome extension>');
-    //   mainWindow.webContents.openDevTools();
-    // }
+    if (isDev) {
+      // Open the DevTools.
+      //BrowserWindow.addDevToolsExtension('<location to your react chrome extension>');
+      mainWindow.webContents.openDevTools();
+    } 
+
     mainWindow.on('closed', () => (mainWindow = null));
     //connect to database
     // createConnection({

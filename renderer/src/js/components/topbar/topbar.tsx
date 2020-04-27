@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { TabMenu } from 'primereact/tabmenu';
 import { useHistory, useLocation } from 'react-router-dom';
 
-export const TopBar = (props) => {
-    const getItemByPath = (path) => {
+interface TopBarProps {
+    menuItems: any[];
+}
+export const TopBar = (props: TopBarProps) => {
+    const getItemByPath = (path: string) => {
         return props.menuItems?.find((menuItem) => menuItem.path === path);
     };
     const history = useHistory();

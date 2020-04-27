@@ -1,9 +1,9 @@
 import React, { Component, useState } from 'react';
 
-export const Form = (props) => {
+export const Form = () => {
   const [value, setValue] = useState('');
 
-  const onChange = (event) => {
+  const onChange = (event: any) => {
     const { value } = event.target;
     setValue(value);
   };
