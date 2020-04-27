@@ -5,6 +5,16 @@
     "license": "MIT",
     "dependencies": {
         "electron": "^8.2.3",
-        "electron-is-dev": "^1.2.0"
+        "electron-is-dev": "^1.2.0",
+        "typeorm": "^0.2.24"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.5",
+        "reflect-metadata": "^0.1.13",
+        "sqlite3": "^4.1.1"
+    },
+    "scripts": {
+        "a": "babel"
     }
 }
