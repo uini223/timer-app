@@ -18,7 +18,6 @@
         "webpack-cli": "^3.3.11"
     },
     "scripts": {
-        "a": "tsc && electron ./dist",
         "compile": "webpack --config ./webpack.config.js",
         "start": "yarn compile && nodemon --exec \"electron ./src/electron.js\""
     },

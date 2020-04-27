@@ -36,11 +36,5 @@ const menuItems = [
         path: '/history',
         icon: 'pi pi-fw pi-pencil',
         component: <Home />,
-    },
-    {
-        label: 'Dupa',
-        path: '/history',
-        icon: 'pi pi-fw pi-pencil',
-        component: <Home />,
     }
 ];
