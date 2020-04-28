@@ -3,6 +3,7 @@ import { Form } from './js/components/Form/Form.component';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { TopBar } from './js/components/topbar/topbar';
 import { Home } from './js/components/home/home.component';
+import { CssBaseline, Container } from '@material-ui/core';
 
 const getRoutes = () => {
     return [...menuItems].reverse().map((menuItem) => {
@@ -17,8 +18,11 @@ const getRoutes = () => {
 export const App = () => {
     return (
         <BrowserRouter>
-            <TopBar menuItems={menuItems} />
-            <Switch>{getRoutes()}</Switch>
+            <CssBaseline />
+            <Container maxWidth="md">
+                <TopBar menuItems={menuItems} />
+                <Switch>{getRoutes()}</Switch>
+            </Container>
         </BrowserRouter>
     );
 };
@@ -36,5 +40,5 @@ const menuItems = [
         path: '/history',
         icon: 'pi pi-fw pi-pencil',
         component: <Home />,
-    }
+    },
 ];

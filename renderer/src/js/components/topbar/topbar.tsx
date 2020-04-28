@@ -1,27 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { TabMenu } from 'primereact/tabmenu';
+import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
+import { AppBar, Tabs, Tab } from '@material-ui/core';
 
 interface TopBarProps {
     menuItems: any[];
 }
 export const TopBar = (props: TopBarProps) => {
-    const getItemByPath = (path: string) => {
-        return props.menuItems?.find((menuItem) => menuItem.path === path);
+    const getValueByPath = (path: string) => {
+        return props.menuItems?.findIndex((menuItem) => menuItem.path === path);
     };
+
     const history = useHistory();
-    const [activeItem, setActiveItem] = useState(
-        getItemByPath(history.location.pathname)
+    const [value, setValue] = useState(
+        getValueByPath(history.location.pathname)
     );
 
+    const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+        history.push(props.menuItems[newValue].path);
+        setValue(newValue);
+    };
+
+    const renderTabs = () => {
+        return props.menuItems.map((menuItem) => (
+            <Tab key={menuItem.label} label={menuItem.label} />
+        ));
+    };
+
     return (
-        <TabMenu
-            model={props.menuItems}
-            activeItem={activeItem}
-            onTabChange={({ value }) => {
-                history.push(value.path);
-                setActiveItem(value);
-            }}
-        />
+        <AppBar position="static">
+            <Tabs variant="fullWidth" value={value} onChange={handleChange}>
+                {renderTabs()}
+            </Tabs>
+        </AppBar>
     );
 };
