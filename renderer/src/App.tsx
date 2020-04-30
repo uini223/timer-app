@@ -1,8 +1,8 @@
 import React from 'react';
-import { Form } from './js/components/Form/Form.component';
+import { Form } from './ts/components/Form/Form.component';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { TopBar } from './js/components/topbar/topbar';
-import { Home } from './js/components/home/home.component';
+import { TopBar } from './ts/components/topbar/topbar';
+import { Home } from './ts/components/home/home.component';
 import { CssBaseline, Container } from '@material-ui/core';
 
 const getRoutes = () => {
